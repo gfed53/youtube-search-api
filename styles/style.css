@@ -1,0 +1,15 @@
+form {
+	margin-bottom: 1em;
+}
+
+#channel-search-results {
+	border: 2px solid green;
+}
+
+#search-results {
+	border: 2px solid blue;
+}
+
+span {
+	display: none;
+}

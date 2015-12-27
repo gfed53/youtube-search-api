@@ -3,8 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>YouTube API</title>
+	<link rel="stylesheet" href="styles/style.css" class="style">
 </head>
 <body>
+	<form id="channel-search">
+		<input id="search-channel-id" type="text" placeholder="Search for Channel" name="channel-search-input">
+		<input type="submit" value="Submit">
+		<input id="channel-clear" type="button" value="Clear">
+	</form>
+
 	<form id="search-term">
 		<input id="query" type="text" name="foo">
 		<input id="channel-id" type="text" placeholder="Channel ID" name="foo1">
@@ -13,6 +20,7 @@
 		<input type="submit" value="Submit">
 		<input id="clear" type="button" value="Clear">
 	</form>
+	<div id="channel-search-results"></div>
 	<div id="search-results"></div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="apps/app.js"></script>
