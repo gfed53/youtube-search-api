@@ -10,6 +10,7 @@ $(function(){
 	});
 	$('#clear').on('click', function(){
 		$('#search-results div').remove();
+		$('#search-results br').remove();
 	});
 	$('#channel-search').on('submit', function(e){
 		e.preventDefault();
@@ -18,7 +19,7 @@ $(function(){
 		getRequestChan(channelSearchTerm);	
 	});
 	$('#channel-clear').on('click', function(){
-		$('#channel-search-results div').remove();
+		$('#channel-search-results div, #channel-search-results br').remove();
 	});
 
 	$('#channel-search-results').on('click', 'input', function(){
