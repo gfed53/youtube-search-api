@@ -1,4 +1,21 @@
 $(function(){
+	$('.input-group-btn').on('click', 'a', function(e){
+		e.preventDefault();
+		console.log(this);
+		console.log($(this).parent().parent().parent());
+		var thisGroup = $(this).parent().parent().parent();
+		yourChoice = $(this).html();
+		thisGroup.find("button").html(yourChoice);
+		// console.log($('.dropdown-toggle').html());
+	});
+
+	$('#ui-search-term').on('submit', function(e){
+		e.preventDefault();
+		var beforeMonth = $('#before-month dropdown-toggle').html();
+		var beforeDay = $('#before-day dropdown-toggle').html();
+		var beforeYear = $('#before-year dropdown-toggle').html();
+
+	})
 	$('#search-term').on('submit', function(e){
 		e.preventDefault();
 		var searchTerm = $('#query').val(),
