@@ -1,4 +1,6 @@
 $(function(){
+	var channelIdUrl;
+
 	$('.input-group-btn').on('click', 'a', function(e){
 		e.preventDefault();
 		console.log(this);
@@ -11,10 +13,17 @@ $(function(){
 
 	$('#ui-search-term').on('submit', function(e){
 		e.preventDefault();
-		var beforeMonth = $('#before-month dropdown-toggle').html();
-		var beforeDay = $('#before-day dropdown-toggle').html();
-		var beforeYear = $('#before-year dropdown-toggle').html();
-
+		var beforeMonth = $('#before-month').html(),
+		beforeDay = $('#before-day').html(),
+		beforeYear = $('#before-year').html(),
+		dateBefore = beforeYear+"-"+beforeMonth+"-"+beforeDay+"T00:00:00.000Z",
+		afterMonth = $('#after-month').html(),
+		afterDay = $('#after-day').html(),
+		afterYear = $('#after-year').html(),
+		dateAfter = afterYear+"-"+afterMonth+"-"+afterDay+"T00:00:00.000Z",
+		uiSearchTerm = $('#ui-query').val();
+		console.log(dateBefore+", "+dateAfter+", "+uiSearchTerm+", "+channelIdUrl);
+		getRequest(uiSearchTerm, channelIdUrl, dateAfter, dateBefore);
 	})
 	$('#search-term').on('submit', function(e){
 		e.preventDefault();
@@ -44,8 +53,9 @@ $(function(){
 		console.log("hi");
 		console.log(parent);
 		console.log(parent.find('span').text());
-		var channelIdUrl = parent.find('span').text();
-		$('#channel-id').val(channelIdUrl);
+		channelIdUrl = parent.find('span').text();
+		console.log(channelIdUrl);
+		// $('#channel-id').val(channelIdUrl);
 		// channelId = channelIdUrl; 
 	});
 });

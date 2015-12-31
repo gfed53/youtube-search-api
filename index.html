@@ -10,64 +10,40 @@
 	<link rel="stylesheet" href="styles/style.css" class="style">
 </head>
 <body>
+	<!-- Even More UI Friendly Type -->
+	<form id="ui-search-term2" class="form-inline">
+		<div class="form-group">
+			<label for="after-month2">Month</label>
+			<input type="text" class="form-control" id="after-month2" placeholder="i.e. January: 01">
+		</div>
+		<div class="form-group">
+			<label for="after-day2">Day</label>
+			<input type="text" class="form-control" id="after-day2" placeholder="i.e. 01, 02">
+		</div>
+		<div class="form-group">
+			<label for="after-year2">Year</label>
+			<input type="text" class="form-control" id="after-year2" placeholder="i.e. 2015">
+		</div>
+		<br>
+		<label>to</label>
+		<br>
+		<div class="form-group">
+			<label for="before-month2">Month</label>
+			<input type="text" class="form-control" id="before-month2" placeholder="i.e. January: 01">
+		</div>
+		<div class="form-group">
+			<label for="before-day2">Day</label>
+			<input type="text" class="form-control" id="before-day2" placeholder="i.e. 01, 02">
+		</div>
+		<div class="form-group">
+			<label for="before-year2">Year</label>
+			<input type="text" class="form-control" id="before-year2" placeholder="i.e. 2015">
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
 	<!-- UI Friendly Type -->
 	<form id="ui-search-term">
 		<div class="input-group">
-			<div class="input-group-btn">
-				<button type="button" id="before-month" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Month<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a id="jan" href="">01</a></li>
-					<li><a id="feb" href="">02</a></li>
-					<li><a id="march" href="">03</a></li>
-					<li><a id="april" href="">04</a></li>
-					<li><a id="may" href="">05</a></li>
-					<li><a id="june" href="">06</a></li>
-					<li><a id="july" href="">07</a></li>
-					<li><a id="aug" href="">08</a></li>
-					<li><a id="sept" href="">09</a></li>
-					<li><a id="oct" href="">10</a></li>
-					<li><a id="nov" href="">11</a></li>
-					<li><a id="dec" href="">12</a></li>
-				</ul>
-			</div><!-- /btn-group -->
-			<div class="input-group-btn">
-				<button type="button" id="before-day" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Day<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a id="1" href="">01</a></li>
-					<li><a id="2" href="">02</a></li>
-					<li><a id="3" href="">03</a></li>
-					<li><a id="4" href="">04</a></li>
-					<li><a id="5" href="">05</a></li>
-					<li><a id="6" href="">06</a></li>
-					<li><a id="7" href="">07</a></li>
-					<li><a id="8" href="">08</a></li>
-					<li><a id="9" href="">09</a></li>
-					<li><a id="10" href="">10</a></li>
-					<li><a id="11" href="">11</a></li>
-					<li><a id="12" href="">12</a></li>
-					<li><a id="13" href="">13</a></li>
-					<li><a id="14" href="">14</a></li>
-				</ul>
-			</div><!-- /btn-group -->
-			<div class="input-group-btn">
-				<button type="button" id="before-year" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a id="2004" href="">2004</a></li>
-					<li><a id="2005" href="">2005</a></li>
-					<li><a id="2006" href="">2006</a></li>
-					<li><a id="2007" href="">2007</a></li>
-					<li><a id="2008" href="">2008</a></li>
-					<li><a id="2009" href="">2009</a></li>
-					<li><a id="2010" href="">2010</a></li>
-					<li><a id="2011" href="">2011</a></li>
-					<li><a id="2012" href="">2012</a></li>
-					<li><a id="2013" href="">2013</a></li>
-					<li><a id="2014" href="">2014</a></li>
-					<li><a id="2015" href="">2015</a></li>
-					<li><a id="2016" href="">2016</a></li>
-				</ul>
-			</div><!-- /btn-group -->
-			<span class="input-group-addon" id="to">To</span>
 			<div class="input-group-btn">
 				<button type="button" id="after-month" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Month<span class="caret"></span></button>
 				<ul class="dropdown-menu">
@@ -122,7 +98,62 @@
 					<li><a id="2016" href="">2016</a></li>
 				</ul>
 			</div><!-- /btn-group -->
-			<input type="text" id="query" class="form-control" placeholder="Search for...">
+			<span class="input-group-addon" id="to">To</span>
+			<div class="input-group-btn">
+				<button type="button" id="before-month" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Month<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a id="jan" href="">01</a></li>
+					<li><a id="feb" href="">02</a></li>
+					<li><a id="march" href="">03</a></li>
+					<li><a id="april" href="">04</a></li>
+					<li><a id="may" href="">05</a></li>
+					<li><a id="june" href="">06</a></li>
+					<li><a id="july" href="">07</a></li>
+					<li><a id="aug" href="">08</a></li>
+					<li><a id="sept" href="">09</a></li>
+					<li><a id="oct" href="">10</a></li>
+					<li><a id="nov" href="">11</a></li>
+					<li><a id="dec" href="">12</a></li>
+				</ul>
+			</div><!-- /btn-group -->
+			<div class="input-group-btn">
+				<button type="button" id="before-day" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Day<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a id="1" href="">01</a></li>
+					<li><a id="2" href="">02</a></li>
+					<li><a id="3" href="">03</a></li>
+					<li><a id="4" href="">04</a></li>
+					<li><a id="5" href="">05</a></li>
+					<li><a id="6" href="">06</a></li>
+					<li><a id="7" href="">07</a></li>
+					<li><a id="8" href="">08</a></li>
+					<li><a id="9" href="">09</a></li>
+					<li><a id="10" href="">10</a></li>
+					<li><a id="11" href="">11</a></li>
+					<li><a id="12" href="">12</a></li>
+					<li><a id="13" href="">13</a></li>
+					<li><a id="14" href="">14</a></li>
+				</ul>
+			</div><!-- /btn-group -->
+			<div class="input-group-btn">
+				<button type="button" id="before-year" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a id="2004" href="">2004</a></li>
+					<li><a id="2005" href="">2005</a></li>
+					<li><a id="2006" href="">2006</a></li>
+					<li><a id="2007" href="">2007</a></li>
+					<li><a id="2008" href="">2008</a></li>
+					<li><a id="2009" href="">2009</a></li>
+					<li><a id="2010" href="">2010</a></li>
+					<li><a id="2011" href="">2011</a></li>
+					<li><a id="2012" href="">2012</a></li>
+					<li><a id="2013" href="">2013</a></li>
+					<li><a id="2014" href="">2014</a></li>
+					<li><a id="2015" href="">2015</a></li>
+					<li><a id="2016" href="">2016</a></li>
+				</ul>
+			</div><!-- /btn-group -->
+			<input type="text" id="ui-query" class="form-control" placeholder="Search for...">
 			<span class="input-group-btn">
 				<button class="btn btn-default btn-channel-sub" type="submit">Go!</button>
 			</span>
