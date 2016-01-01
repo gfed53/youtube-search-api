@@ -10,39 +10,47 @@
 	<link rel="stylesheet" href="styles/style.css" class="style">
 </head>
 <body>
-	<!-- Even More UI Friendly Type -->
-	<form id="ui-search-term2" class="form-inline">
-		<div class="form-group">
-			<label for="after-month2">Month</label>
-			<input type="text" class="form-control" id="after-month2" placeholder="i.e. January: 01">
-		</div>
-		<div class="form-group">
-			<label for="after-day2">Day</label>
-			<input type="text" class="form-control" id="after-day2" placeholder="i.e. 01, 02">
-		</div>
-		<div class="form-group">
-			<label for="after-year2">Year</label>
-			<input type="text" class="form-control" id="after-year2" placeholder="i.e. 2015">
-		</div>
-		<br>
-		<label>to</label>
-		<br>
-		<div class="form-group">
-			<label for="before-month2">Month</label>
-			<input type="text" class="form-control" id="before-month2" placeholder="i.e. January: 01">
-		</div>
-		<div class="form-group">
-			<label for="before-day2">Day</label>
-			<input type="text" class="form-control" id="before-day2" placeholder="i.e. 01, 02">
-		</div>
-		<div class="form-group">
-			<label for="before-year2">Year</label>
-			<input type="text" class="form-control" id="before-year2" placeholder="i.e. 2015">
-		</div>
-		<button type="submit" class="btn btn-default">Go</button>
-	</form>
-	<!-- UI Friendly Type -->
-	<form id="ui-search-term">
+	<div class="container">
+		<form id="channel-search">
+			<input id="search-channel-id" type="text" placeholder="Search for Channel" name="channel-search-input">
+			<input type="submit" value="Submit">
+			<input id="channel-clear" type="button" value="Clear">
+		</form>
+		<!-- Even More UI Friendly Type -->
+		<form id="ui-search-term2" class="form-inline">
+			<div class="form-group">
+				<label for="after-month2">Month</label>
+				<input type="text" class="form-control" id="after-month2" placeholder="i.e. January: 01">
+			</div>
+			<div class="form-group">
+				<label for="after-day2">Day</label>
+				<input type="text" class="form-control" id="after-day2" placeholder="i.e. 01, 02">
+			</div>
+			<div class="form-group">
+				<label for="after-year2">Year</label>
+				<input type="text" class="form-control" id="after-year2" placeholder="i.e. 2015">
+			</div>
+			<br>
+			<label>to</label>
+			<br>
+			<div class="form-group">
+				<label for="before-month2">Month</label>
+				<input type="text" class="form-control" id="before-month2" placeholder="i.e. January: 01">
+			</div>
+			<div class="form-group">
+				<label for="before-day2">Day</label>
+				<input type="text" class="form-control" id="before-day2" placeholder="i.e. 01, 02">
+			</div>
+			<div class="form-group">
+				<label for="before-year2">Year</label>
+				<input type="text" class="form-control" id="before-year2" placeholder="i.e. 2015">
+			</div>
+			<input type="text" id="ui-query2" class="form-control" placeholder="Search for...">
+			<button type="submit" class="btn btn-default">Go</button>
+			<input id="clear" class="btn btn-default" type="button" value="Clear Results">
+		</form>
+		<!-- UI Friendly Type -->
+	<!-- <form id="ui-search-term">
 		<div class="input-group">
 			<div class="input-group-btn">
 				<button type="button" id="after-month" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Month<span class="caret"></span></button>
@@ -60,7 +68,7 @@
 					<li><a id="nov" href="">11</a></li>
 					<li><a id="dec" href="">12</a></li>
 				</ul>
-			</div><!-- /btn-group -->
+			</div>
 			<div class="input-group-btn">
 				<button type="button" id="after-day" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Day<span class="caret"></span></button>
 				<ul class="dropdown-menu">
@@ -79,7 +87,7 @@
 					<li><a id="13" href="">13</a></li>
 					<li><a id="14" href="">14</a></li>
 				</ul>
-			</div><!-- /btn-group -->
+			</div>
 			<div class="input-group-btn">
 				<button type="button" id="after-year" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year<span class="caret"></span></button>
 				<ul class="dropdown-menu">
@@ -97,7 +105,7 @@
 					<li><a id="2015" href="">2015</a></li>
 					<li><a id="2016" href="">2016</a></li>
 				</ul>
-			</div><!-- /btn-group -->
+			</div>
 			<span class="input-group-addon" id="to">To</span>
 			<div class="input-group-btn">
 				<button type="button" id="before-month" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Month<span class="caret"></span></button>
@@ -115,7 +123,7 @@
 					<li><a id="nov" href="">11</a></li>
 					<li><a id="dec" href="">12</a></li>
 				</ul>
-			</div><!-- /btn-group -->
+			</div>
 			<div class="input-group-btn">
 				<button type="button" id="before-day" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Day<span class="caret"></span></button>
 				<ul class="dropdown-menu">
@@ -134,7 +142,7 @@
 					<li><a id="13" href="">13</a></li>
 					<li><a id="14" href="">14</a></li>
 				</ul>
-			</div><!-- /btn-group -->
+			</div>
 			<div class="input-group-btn">
 				<button type="button" id="before-year" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year<span class="caret"></span></button>
 				<ul class="dropdown-menu">
@@ -152,30 +160,27 @@
 					<li><a id="2015" href="">2015</a></li>
 					<li><a id="2016" href="">2016</a></li>
 				</ul>
-			</div><!-- /btn-group -->
+			</div>
 			<input type="text" id="ui-query" class="form-control" placeholder="Search for...">
 			<span class="input-group-btn">
 				<button class="btn btn-default btn-channel-sub" type="submit">Go!</button>
 			</span>
 		</div>
-	</form><!-- /input-group -->
-	<!-- Basic Type -->
-	<form id="channel-search">
-		<input id="search-channel-id" type="text" placeholder="Search for Channel" name="channel-search-input">
-		<input type="submit" value="Submit">
-		<input id="channel-clear" type="button" value="Clear">
 	</form>
+	<!-- Basic Type -->
+	
 
-	<form id="search-term">
+	<!-- <form id="search-term">
 		<input id="query" type="text" name="foo">
 		<input id="channel-id" type="text" placeholder="Channel ID" name="foo1">
 		<input id="date-after" type="text" value="201x-01-01T00:00:00.000Z" name="bar">
 		<input id="date-before" type="text" value="201x-01-01T00:00:00.000Z" name="bar1">
 		<input type="submit" value="Submit">
 		<input id="clear" type="button" value="Clear">
-	</form>
-	<div id="channel-search-results"></div>
-	<div id="search-results"></div>
+	</form> -->
+		<div id="channel-search-results"></div>
+		<div id="search-results"></div>
+	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="apps/app.js"></script>

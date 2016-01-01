@@ -11,6 +11,21 @@ $(function(){
 		// console.log($('.dropdown-toggle').html());
 	});
 
+	$('#ui-search-term2').on('submit', function(e){
+		e.preventDefault();
+		var beforeMonth = $('#before-month2').val(),
+		beforeDay = $('#before-day2').val(),
+		beforeYear = $('#before-year2').val(),
+		dateBefore = beforeYear+"-"+beforeMonth+"-"+beforeDay+"T00:00:00.000Z",
+		afterMonth = $('#after-month2').val(),
+		afterDay = $('#after-day2').val(),
+		afterYear = $('#after-year2').val(),
+		dateAfter = afterYear+"-"+afterMonth+"-"+afterDay+"T00:00:00.000Z",
+		uiSearchTerm = $('#ui-query2').val();
+		console.log(dateBefore+", "+dateAfter+", "+uiSearchTerm+", "+channelIdUrl);
+		getRequest(uiSearchTerm, channelIdUrl, dateAfter, dateBefore);
+	});
+
 	$('#ui-search-term').on('submit', function(e){
 		e.preventDefault();
 		var beforeMonth = $('#before-month').html(),
@@ -24,7 +39,8 @@ $(function(){
 		uiSearchTerm = $('#ui-query').val();
 		console.log(dateBefore+", "+dateAfter+", "+uiSearchTerm+", "+channelIdUrl);
 		getRequest(uiSearchTerm, channelIdUrl, dateAfter, dateBefore);
-	})
+	});
+
 	$('#search-term').on('submit', function(e){
 		e.preventDefault();
 		var searchTerm = $('#query').val(),
@@ -34,16 +50,19 @@ $(function(){
 		console.log(searchTerm+ ' ' + channelId + ' ' + dateAfter + ' ' + dateBefore);
 		getRequest(searchTerm, channelId, dateAfter, dateBefore);	
 	});
+
 	$('#clear').on('click', function(){
 		$('#search-results div').remove();
 		$('#search-results br').remove();
 	});
+
 	$('#channel-search').on('submit', function(e){
 		e.preventDefault();
 		var channelSearchTerm = $('#search-channel-id').val();
 		console.log(channelSearchTerm);
 		getRequestChan(channelSearchTerm);	
 	});
+
 	$('#channel-clear').on('click', function(){
 		$('#channel-search-results div, #channel-search-results br').remove();
 	});
