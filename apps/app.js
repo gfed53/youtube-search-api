@@ -67,7 +67,10 @@ $(function(){
 		$('#channel-search-results div, #channel-search-results br').remove();
 	});
 
-	$('#channel-search-results').on('click', 'input', function(){
+	$('#channel-search-results').on('click', '.channel-selector', function(){
+		console.log($(this).val());
+		$('.channel-selector').val("Select");
+		$(this).val("Selected");
 		var parent = $(this).parent();
 		console.log("hi");
 		console.log(parent);
@@ -97,7 +100,8 @@ var getRequest = function(searchTerm, channelId, dateAfter, dateBefore){
 		publishedAfter: dateAfter,
 		publishedBefore: dateBefore,
 		order: "date",
-		channelId: channelId
+		channelId: channelId,
+		type: "video"
 	};
 	url= "https://www.googleapis.com/youtube/v3/search";
 	youtubeURL = "https://www.youtube.com/watch?v=";
@@ -141,7 +145,7 @@ var listResults = function(results){
 var channelListResults = function(results){
 	$.each(results, function(index, value){
 		// console.log(value.items.snippet.title);
-		$('#channel-search-results').append("<div><h3>"+value.snippet.title+"</h3><h4>"+value.snippet.publishedAt+"</h4><img src= "+value.snippet.thumbnails.medium.url+"><span class='channel-id-url'>"+value.id.channelId+"</span><span class='url'>"+youtubeURL+value.id.channelId+"</span><input type='button' value='Select'></div><br>");
+		$('#channel-search-results').append("<div><h3>"+value.snippet.title+"</h3><h4>"+value.snippet.publishedAt+"</h4><img src= "+value.snippet.thumbnails.medium.url+"><span class='channel-id-url'>"+value.id.channelId+"</span><span class='url'>"+youtubeURL+value.id.channelId+"</span><input class='channel-selector' type='button' value='Select'></div><br>");
 	});
 };
 
