@@ -71,12 +71,21 @@ $(function(){
 		var parent = $(this).parent();
 		console.log("hi");
 		console.log(parent);
-		console.log(parent.find('span').text());
-		channelIdUrl = parent.find('span').text();
+		console.log(parent.find('.channel-id-url').text());
+		channelIdUrl = parent.find('.channel-id-url').text();
 		console.log(channelIdUrl);
 		// $('#channel-id').val(channelIdUrl);
 		// channelId = channelIdUrl; 
 	});
+
+	$('#search-results, #channel-search-results').on('click', 'img', function(){
+		console.log(this);
+		var parent = $(this).parent();
+		console.log(parent);
+		console.log(parent.find('.url').text());
+		myUrl = parent.find('.url').text();
+		window.open(myUrl, '_blank');
+	})
 });
 
 var getRequest = function(searchTerm, channelId, dateAfter, dateBefore){
@@ -125,14 +134,14 @@ var getRequestChan = function(channelSearchTerm){
 var listResults = function(results){
 	$.each(results, function(index, value){
 		// console.log(value.items.snippet.title);
-		$('#search-results').append("<div><h3>"+value.snippet.title+"</h3><h4>"+value.snippet.publishedAt+"</h4><a href= "+youtubeURL+value.id.videoId+"><img src= "+value.snippet.thumbnails.medium.url+"></a></div><br>");
+		$('#search-results').append("<div><h3>"+value.snippet.title+"</h3><h4>"+value.snippet.publishedAt+"</h4><img src= "+value.snippet.thumbnails.medium.url+"><span class='url'>"+youtubeURL+value.id.videoId+"</span></div><br>");
 	});
 };
 
 var channelListResults = function(results){
 	$.each(results, function(index, value){
 		// console.log(value.items.snippet.title);
-		$('#channel-search-results').append("<div><h3>"+value.snippet.title+"</h3><h4>"+value.snippet.publishedAt+"</h4><a href= "+youtubeURL+value.id.channelId+"><img src= "+value.snippet.thumbnails.medium.url+"></a><span>"+value.id.channelId+"</span><input type='button' value='Select'></div><br>");
+		$('#channel-search-results').append("<div><h3>"+value.snippet.title+"</h3><h4>"+value.snippet.publishedAt+"</h4><img src= "+value.snippet.thumbnails.medium.url+"><span class='channel-id-url'>"+value.id.channelId+"</span><span class='url'>"+youtubeURL+value.id.channelId+"</span><input type='button' value='Select'></div><br>");
 	});
 };
 

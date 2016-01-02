@@ -13,3 +13,7 @@ form {
 span {
 	display: none;
 }
+
+img:hover {
+	cursor: pointer;
+}
