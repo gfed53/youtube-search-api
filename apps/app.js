@@ -16,12 +16,37 @@ $(function(){
 		var beforeMonth = $('#before-month2').val(),
 		beforeDay = $('#before-day2').val(),
 		beforeYear = $('#before-year2').val(),
-		dateBefore = beforeYear+"-"+beforeMonth+"-"+beforeDay+"T00:00:00.000Z",
 		afterMonth = $('#after-month2').val(),
 		afterDay = $('#after-day2').val(),
 		afterYear = $('#after-year2').val(),
-		dateAfter = afterYear+"-"+afterMonth+"-"+afterDay+"T00:00:00.000Z",
-		uiSearchTerm = $('#ui-query2').val();
+		uiSearchTerm = $('#ui-query2').val(),
+		allDayMonthItems = [beforeMonth, beforeDay, afterMonth, afterDay];
+
+		for(var i=0; i<allDayMonthItems.length; i++){
+			var dateItem = allDayMonthItems[i];
+			console.log(i);
+			console.log(dateItem);
+			if(dateItem === ""){
+				console.log("this should work");
+				allDayMonthItems[i] = "01";
+			}
+			else if(dateItem.length === 1){
+				dateItem = "0"+dateItem;
+				console.log("this too");
+			}
+		}
+
+		if(beforeYear === "" || beforeYear.length<4){
+			beforeYear = "2016";
+		}
+		if(afterYear === ""){
+			afterYear = "2004";
+		}
+		console.log(beforeMonth);
+		console.log(allDayMonthItems[0]);
+		var dateBefore = beforeYear+"-"+allDayMonthItems[0]+"-"+allDayMonthItems[1]+"T00:00:00.000Z",
+		dateAfter = afterYear+"-"+allDayMonthItems[2]+"-"+allDayMonthItems[3]+"T00:00:00.000Z";
+
 		console.log(dateBefore+", "+dateAfter+", "+uiSearchTerm+", "+channelIdUrl);
 		getRequest(uiSearchTerm, channelIdUrl, dateAfter, dateBefore);
 	});
